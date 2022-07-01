@@ -1,50 +1,44 @@
 #include <stdio.h>
-#include <stdlib.h>
+
 /**
- * main - main block
- * Description: Write a program that prints all possible
- * different combinations of two digits
- * Return: 0
- */
+ *  * main - entry point
+ *   *
+ *    * Description: Print all possible combinations of two two-digit numbers
+ *     * Return: 0
+*/
 int main(void)
 {
-int c;
-int d;
-int e;
-int f = 0;
+	int x1;
+	int x2;
+	int y1;
+	int y2;
 
-while (f < 10)
-{
-	e = 0;
-	while (e < 10)
+	for (x1 = 0; x1 < 10; ++x1)
 	{
-		d = 0;
-		while (d < 10)
+		for (x2 = 0; x2 < 10; ++x2)
 		{
-			c = 0;
-			while (c < 10)
+			for (y1 = x1; y1 < 10; ++y1)
 			{
-				if (!(f == c && e == d))
+				for (y2 = ((x1 == y1) ? (x2 + 1) : 0); y2 < 10; ++y2)
 				{
-					putchar('0' + f);
-					putchar('0' + e);
+					putchar('0' + x1);
+					putchar('0' + x2);
 					putchar(' ');
-					putchar('0' + d);
-					putchar('0' + c);
-					if (!(f + e == 18 && c + d == 17 && d == 9))
+					putchar('0' + y1);
+					putchar('0' + y2);
+
+					if (x1 != 9 || x2 != 8 ||
+							y1 != 9 || y2 != 9)
 					{
 						putchar(',');
 						putchar(' ');
 					}
 				}
-				c++;
 			}
-			d++;
 		}
-		e++;
 	}
-	f++;
-}
-putchar('\n');
-return (0);
+
+	putchar('\n');
+
+	return (0);
 }

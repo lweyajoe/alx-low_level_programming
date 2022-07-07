@@ -1,1 +1,1 @@
-My README.md for Nested_loops
+This is another lesson under low-level-programming... generally principles of C#

@@ -1,0 +1,1 @@
+More lessons and exercises on pointers, strings and arrays

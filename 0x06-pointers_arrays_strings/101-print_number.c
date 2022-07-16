@@ -1,35 +1,27 @@
 #include "main.h"
 
 /**
- * print_number - print an integer, without using long, arrays, or pointers
- * @n: number to be printed
+ * rot13 - encodes a string in rot13
+ * @s: string to be encoded
+ *
+ * Return: the resulting string
  */
-
-void print_number(int n)
+char *rot13(char *s)
 {
-	unsigned int tens, dig, pos = n;
-	double temp_tens = 1;
+	int i, j;
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	if (n == 0)
-		_putchar('0');
-	else
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (n < 0)
+		for (j = 0; a[j] != '\0'; j++)
 		{
-			pos = n * -1;
-			_putchar('-');
-		}
-
-		while (temp_tens <= pos)
-			temp_tens *= 10;
-		tens = temp_tens / 10;
-
-		while (tens >= 1)
-		{
-			dig = pos / tens;
-			_putchar(dig + '0');
-			pos = (pos - (tens * dig));
-			tens /= 10;
+			if (s[i] == a[j])
+			{
+				s[i] = b[j];
+				break;
+			}
 		}
 	}
+	return (s);
 }

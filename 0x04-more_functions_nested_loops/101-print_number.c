@@ -6,7 +6,7 @@ void print(unsigned int n);
  * print_number - print number
  * @var: variable to be printed
  *
- * Created by: Sanctus-Peter
+ * Created by: Lweya-Joe
  * cc: 7th july, 2022
  *
  */
